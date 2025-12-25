@@ -4,14 +4,7 @@ import { Card } from '@/components/ui/Card';
 import { formatTimeAgo } from '@/lib/utils';
 import { CodenameTextStyle } from '@/lib/textstyle';
 import { fadeUp } from '@/lib/animation';
-
-// Interface Wish
-interface Wish {
-  id: string;
-  text: string;
-  author: string;
-  createdAt: number;
-}
+import { Wish } from '@/types/wish';
 
 interface WishCardProps {
   item: Wish;

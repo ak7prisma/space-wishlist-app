@@ -7,13 +7,7 @@ import { fadeUp, staggerContainer, floatAnimation } from '@/lib/animation';
 import { CodenameTextStyle } from '@/lib/textstyle';
 import { formatTimeAgo } from '@/lib/utils';
 import { useCurrentTime } from '@/hooks/useCurrentTime';
-
-interface Wish {
-  id: string;
-  text: string;
-  author: string;
-  createdAt: number;
-}
+import { Wish } from '@/types/wish';
 
 interface RecentWishesProps {
   wishes: Wish[];
