@@ -4,7 +4,7 @@
 
 > An immersive, space-themed interactive application where users can send "wishes" to the universe. Built with **Next.js** and **Framer Motion**, featuring real-time filtering, smooth staggered animations, and a robust management system.
 
-🔗 **Live Demo:** [https://space-wishlist.vercel.app/](https://space-wishlist.vercel.app/)
+🔗 **Live Demo:** [https://space-wishlist-app.vercel.app/](https://space-wishlist-app.vercel.app/)
 
 ---
 
