@@ -5,9 +5,26 @@
   color: #ffffff;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 @layer utilities {
-  ::-webkit-scrollbar { width: 10px; }
-  ::-webkit-scrollbar-track { background: #020617; }
-  ::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; border: 2px solid #020617; }
-  ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #020617;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #1e293b;
+    border-radius: 9999px;
+    border: 2px solid #020617;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #3b82f6;
+  }
 }

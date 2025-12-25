@@ -1,14 +1,17 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Stars } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { FormInput } from '@/components/ui/FormInput';
 import { SubmitButton } from '@/components/ui/SubmitButton';
+import { useWishlist } from '@/context/WishlistContext';
+import { Wish } from '@/types/wish';
 
-interface WishFormProps {
-  onAddWish: (name: string, message: string) => Promise<void>;
-}
+export function WishForm() {
 
-export function WishForm({ onAddWish }: Readonly<WishFormProps>) {
+  const { addWish } = useWishlist();
+
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -18,8 +21,19 @@ export function WishForm({ onAddWish }: Readonly<WishFormProps>) {
     if (!name.trim() || !message.trim()) return;
 
     setIsSubmitting(true);
-    await onAddWish(name, message);
-    
+
+    const newWish: Wish = {
+      id: crypto.randomUUID(),
+      text: message,
+      author: name,
+      createdAt: Date.now(),
+      isCompleted: false
+    };
+
+    addWish(newWish);
+
+    await new Promise(resolve => setTimeout(resolve, 500));
+
     setName('');
     setMessage('');
     setIsSubmitting(false);

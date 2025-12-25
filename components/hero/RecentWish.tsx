@@ -80,7 +80,7 @@ export function RecentWish({ wishes, totalWishes }: Readonly<RecentWishesProps>)
         )}
       </motion.div>
       
-      {/* View All Button - UPDATED */}
+      {/* View All Button */}
       {totalWishes > 3 && (
            <motion.div className="mt-6 flex justify-center" variants={fadeUp}>
               <Button 

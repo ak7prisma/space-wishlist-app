@@ -29,3 +29,17 @@ export const floatAnimation: Variants = {
     transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
   },
 };
+
+export const cardVariants = {
+  hidden: { opacity: 0, y: 20, scale: 0.95 },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: (index % 9) * 0.05,
+      duration: 0.3,
+    },
+  }),
+  
+};

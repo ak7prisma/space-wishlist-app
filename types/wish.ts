@@ -3,4 +3,5 @@ export interface Wish {
   text: string;
   author: string;
   createdAt: number;
+  isCompleted: boolean;
 }

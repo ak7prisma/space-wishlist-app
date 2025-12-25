@@ -1,21 +1,18 @@
 import { useState, useEffect } from 'react';
+import { Wish } from '@/types/wish';
 
-export interface Wish {
-  id: string;
-  text: string;
-  author: string;
-  createdAt: number;
-  isCompleted: boolean;
-}
-
-export function useWishlist() {
+export function useWishlistData() {
   const [wishes, setWishes] = useState<Wish[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem('space_wishlist');
     if (saved) {
-      setWishes(JSON.parse(saved));
+      try {
+        setWishes(JSON.parse(saved));
+      } catch (e) {
+        console.error("Error parsing wishlist", e);
+      }
     }
     setIsLoaded(true);
   }, []);
@@ -26,8 +23,7 @@ export function useWishlist() {
     }
   }, [wishes, isLoaded]);
 
-//CRUD Wishlist
-
+  // CRUD Operations
   const addWish = (wish: Wish) => {
     setWishes((prev) => [wish, ...prev]);
   };
