@@ -1,52 +1,62 @@
-# 🚀 Personal Portfolio - Ahmad Kurnia Prisma
+# 🌌 Space WishList - Galactic Transmission Logs
 
 ![Project Banner](public/Preview.png)
 
-> A modern, responsive, and interactive portfolio website built with **Next.js**, **TypeScript**, and **Tailwind CSS**. Designed to showcase my projects, skills, and professional journey with smooth animations and clean architecture.
+> An immersive, space-themed interactive application where users can send "wishes" to the universe. Built with **Next.js** and **Framer Motion**, featuring real-time filtering, smooth staggered animations, and a robust management system.
 
-🔗 **Live Demo:** [https://portofolio-ahmad-kurnia-prisma.vercel.app/](https://portofolio-ahmad-kurnia-prisma.vercel.app/)
+🔗 **Live Demo:** [https://space-wishlist.vercel.app/](https://space-wishlist.vercel.app/)
 
 ---
 
 ## 🛠️ Tech Stack
 
-This project leverages the latest web technologies for optimal performance and developer experience:
+This project combines aesthetic design with solid engineering:
 
 -   **Framework:** [Next.js 14/15 (App Router)](https://nextjs.org/)
 -   **Language:** [TypeScript](https://www.typescriptlang.org/)
 -   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 -   **Animation:** [Framer Motion](https://www.framer.com/motion/)
+-   **State Management:** React Context & Custom Hooks
 -   **Icons:** [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
--   **Deployment:** [Vercel](https://vercel.com/)
 
 ---
 
 ## ✨ Key Features
 
--   **🎨 Modern UI/UX:** Dark-themed, sleek design with glassmorphism effects.
--   **📱 Fully Responsive:** Optimized for all devices (Mobile, Tablet, Desktop).
--   **⚡ High Performance:** Static site generation and optimized assets via Next.js.
--   **🎭 Smooth Animations:** Scroll-reveal effects and interactive elements using Framer Motion.
--   **🧩 Modular Architecture:** Data, Logic (Hooks), and UI are strictly separated for maintainability.
--   **📧 Working Contact Form:** Integrated with Formspree/EmailJS (custom hook implementation).
+-   **🚀 Interactive CRUD System:** Users can create, read, update, and delete their transmission logs (wishes) seamlessly.
+-   **🔍 Real-Time Filtering:** Optimized search functionality that instantly filters wishes by message content or author name without layout shifting.
+-   **🎭 Staggered Animations:** Beautiful entrance animations for grid items using `Framer Motion` variants.
+-   **🧩 Clean Architecture:** Logic is strictly separated from UI using custom hooks (`useWishlistLogic`), making the code highly maintainable.
+-   **🎨 Glassmorphism UI:** A modern, translucent design aesthetic set against a dynamic star background.
+-   **📱 Layout Stability:** Engineered to prevent layout shifts (jumping) caused by scrollbars during filtering interactions.
 
 ---
 
 ## 📂 Project Structure
 
-The project follows a "Clean Code" structure to ensure scalability:
+The project follows a modular structure to ensure scalability and separation of concerns:
 
 ```bash
 root/
-├── app/               # Next.js App Router pages
-├── components/        # Reusable UI components
-│   ├── ui/            # Atomic components (Buttons, Inputs, Cards)
-│   ├── project/       # Project-specific components (Preview, Details)
-│   ├── contact/       # Contact form & info components
-│   └── .../           # Other component (about, hero, etc)
-├── data/              # ALL content (Text, Links, Projects) lives here
-├── hooks/             # Custom React Hooks (e.g., useContactForm)
-└── lib/               # Utilities (Animation variants, helpers)
+├── app/
+│   ├── layout.tsx         # Root Layout
+│   └── page.tsx           # Main Entry
+├── components/
+│   ├── wishlist/          # Core Components
+│   │   ├── WishCard.tsx   # Individual Grid Item
+│   │   ├── WishlistFilter.tsx
+│   │   └── WishlistSection.tsx
+│   ├── modals/            # Interactive Modals
+│   │   ├── DeleteWishModal.tsx
+│   │   └── UpdateWishModal.tsx
+│   └── ui/                # Atomic Components (Button, Input)
+├── context/
+│   └── WishlistContext.tsx # Global State Provider
+├── hooks/
+│   ├── useWishlistLogic.ts # Business Logic (Search, Pagination, Modal State)
+│   └── useCurrentTime.ts   # Time utility
+└── lib/
+    └── animations.ts       # Framer Motion Variants
 
 ```
 
@@ -54,12 +64,12 @@ root/
 
 ## 🚀 Getting Started Locally
 
-Follow these steps to run the project on your local machine:
+Follow these steps to explore the galaxy locally:
 
 1. **Clone the repository**
 ```bash
-git clone [https://github.com/ak7prisma/portofolio-ahmad-kurnia-prisma.git](https://github.com/ak7prisma/portofolio-ahmad-kurnia-prisma.git)
-cd portfolio-ahmad-kurnia-prisma
+git clone [https://github.com/ak7prisma/space-wishlist-app.git](https://github.com/ak7prisma/space-wishlist-app.git)
+cd space-wishlist
 
 ```
 
@@ -81,25 +91,44 @@ npm run dev
 
 
 4. **Open in Browser**
-Visit `http://localhost:3001` to see the app in action.
+Visit `http://localhost:3000` to launch the terminal.
 
 ---
 
-## 📝 Customization
+## 🧠 Code Highlights
 
-Because of the **Data-Driven** architecture, you can update the content easily without touching the UI code:
+This project emphasizes **Separation of Concerns**. Complex logic is extracted from the UI components:
 
-* **Update Bio/Stats:** Edit `root/data/about.tsx`
-* **Update Projects:** Edit `root/data/projects.tsx`
-* **Update Social Links:** Edit `root/data/socials.tsx`
-* **Update Contact Info:** Edit `root/data/contact.tsx`
+```typescript
+// hooks/useWishlistLogic.ts
+// Handles all state for Search, Pagination, and Modals
+export const useWishlistLogic = (wishes, updateWish, deleteWish) => {
+  // ... filtering logic
+  // ... pagination logic
+  // ... modal handlers
+  return { search, visibleWishes, openModal, ... };
+};
+
+```
+
+Animations are centralized to prevent prop drilling and clutter:
+
+```typescript
+// constants/animations.ts
+export const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i) => ({ opacity: 1, y: 0, transition: { delay: i * 0.05 } })
+};
+
+```
 
 ---
 
-## 📬 Contact
+## 📬 Contact / Command Center
 
-Feel free to reach out if you want to collaborate or just say hi!
+If you'd like to collaborate or visit my main base of operations:
 
+* **Command Center (Portfolio):** [Ahmad Kurnia Prisma](https://portofolio-ahmad-kurnia-prisma.vercel.app/)
 * **Email:** ahmadkurniaprisma@gmail.com
 * **LinkedIn:** [Ahmad Kurnia Prisma](https://www.google.com/search?q=https://www.linkedin.com/in/ahmad-kurnia-prisma-1b639a313)
 * **Instagram:** [@akprisma](https://www.google.com/search?q=https://www.instagram.com/akprisma)
