@@ -6,9 +6,8 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   { name: "Home", href: "#hero" },
   { name: "Wishlist", href: "#wishlist" },
-  { name: "Rating", href: "#rating" }
 ];
 
-export const contactLink: NavLink = { 
-    name: "Contact", href: "#contact" 
+export const portofolioLink: NavLink = { 
+    name: "See Another Projects", href: "https://portofolio-ahmad-kurnia-prisma.vercel.app/#projects" 
 };

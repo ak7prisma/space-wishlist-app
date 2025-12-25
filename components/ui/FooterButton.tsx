@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { navLinks, contactLink } from "../../data/navlink";
+import { navLinks, portofolioLink } from "@/data/navlink";
 
 export default function FooterButton() {
 
-  const fullLink = [...navLinks, contactLink];
+  const fullLink = [...navLinks, portofolioLink];
 
   return (
     <div className="flex flex-col items-center md:items-start">

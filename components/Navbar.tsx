@@ -8,7 +8,7 @@ import { Menu, X, ArrowRight } from "lucide-react";
 import NavButton from "./ui/NavButton";
 import MobileMenu from "./ui/MobileMenu";
 import { Button } from "./ui/Button";
-import { navLinks, contactLink } from "@/data/navlink"; 
+import { navLinks, portofolioLink } from "@/data/navlink"; 
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,13 +52,13 @@ export default function Navbar() {
         {/* Right Section  */}
         <div className="hidden md:flex items-center gap-4">
           <Button 
-            href={contactLink.href} 
+            href={portofolioLink.href} 
             variant="primary" 
             size="sm" 
             className="rounded-full font-semibold"
             icon={<ArrowRight size={16} />}
           >
-            {contactLink.name} Me
+            {portofolioLink.name}
           </Button>
         </div>
 
