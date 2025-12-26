@@ -49,11 +49,11 @@ root/
 │   ├── modals/            # Interactive Modals
 │   │   ├── DeleteWishModal.tsx
 │   │   └── UpdateWishModal.tsx
-│   └── ui/                # Atomic Components (Button, Input)
+│   └── ui/                # Atomic Components
 ├── context/
 │   └── WishlistContext.tsx # Global State Provider
 ├── hooks/
-│   ├── useWishlistLogic.ts # Business Logic (Search, Pagination, Modal State)
+│   ├── useWishlistLogic.ts # Search, Pagination, Modal State
 │   └── useCurrentTime.ts   # Time utility
 └── lib/
     └── animations.ts       # Framer Motion Variants

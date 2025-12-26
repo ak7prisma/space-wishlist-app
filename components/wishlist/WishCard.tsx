@@ -37,7 +37,7 @@ export function WishCard({
       <Card className={`h-full flex flex-col justify-between p-6 relative group/card transition-all duration-300 hover:border-white/20 hover:-translate-y-1 ${style.borderGlow}`}>
         
         {/* Action Buttons */}
-        <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover/card:opacity-100 transition-opacity duration-200">
+        <div className="absolute top-3 right-3 flex gap-2 mr-1 mt-1 group-hover/card:opacity-100 transition-opacity duration-200">
           <button 
             onClick={() => onEditClick(item)}
             className="flex justify-center items-center p-1.5 rounded-md bg-slate-800 text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition-colors border border-white/5 relative z-20"

@@ -82,7 +82,7 @@ export function RecentWish({ wishes, totalWishes }: Readonly<RecentWishesProps>)
       
       {/* View All Button */}
       {totalWishes > 3 && (
-           <motion.div className="mt-6 flex justify-center" variants={fadeUp}>
+           <motion.div className="mt-6 flex justify-center" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               <Button 
                 href="#wishlist"
                 variant="ghost"
